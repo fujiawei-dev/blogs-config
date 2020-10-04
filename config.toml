@@ -1,0 +1,128 @@
+baseURL = "localhost"
+
+# 网站标题
+title   = "Life-Long Learning"
+description = "Here is a collection of my notes."
+
+# 语言
+languageCode = "en-us"
+# languageCode = "zh-cn"
+
+# 主题
+theme = "hello-friend"
+
+# 分页数量
+paginate  = 5
+
+# 文件目录
+archetypeDir = "archetypes"
+contentDir   = "content"
+dataDir      = "data"
+layoutDir    = "layouts"
+publishDir   = "public"
+
+buildDrafts  = false
+buildFuture  = false
+buildExpired = false
+canonifyURLs = true
+
+enableRobotsTXT = true
+enableGitInfo   = false
+enableEmoji     = true
+enableMissingTranslationPlaceholders = false
+disableRSS     = false
+disableSitemap = false
+disable404     = false
+disableHugoGeneratorInject = false
+useRelativeCover = true
+
+# Set the unicode character used for the "return" link in page footnotes.
+footnotereturnlinkcontents = "↩"
+
+[permalinks]
+  posts = "/posts/:year/:month/:day/:title/"
+
+[author]
+  name = "Rustle Karl"
+
+[blackfriday]
+  hrefTargetBlank = true
+
+[taxonomies]
+  tag      = "tags"
+  category = "categories"
+  series   = "series"
+
+[params]
+  # dir name of your blog content (default is `content/posts`).
+  # the list of set content will show up on your index page (baseurl).
+  contentTypeName = "posts"
+
+  # "light" or "dark"
+  defaultTheme = "dark"
+
+  # if you set this to 0, only submenu trigger will be visible
+  # showMenuItems = 2
+
+  # Show reading time in minutes for posts
+  showReadingTime = false
+
+  # 显示自动生成的目录
+  # toc = true
+
+  # Colors for favicons
+  [params.favicon.color]
+    mask = "#252627"
+    msapplication = "#252627"
+    theme = "#252627"
+
+  [params.logo]
+    logoText     = "# cd /root/"
+    logoHomeLink = "/"
+    # Set true to remove the logo cursor entirely.
+    # logoCursorDisabled = false
+    # Set to a valid CSS color to change the cursor in the logo.
+    # logoCursorColor    = "#67a2c9"
+    # Set to a valid CSS time value to change the animation duration, "0s" to disable.
+    # logoCursorAnimate  = "2s"
+
+  # [[params.social]]
+  #   name = "email"
+  #   url  = "mailto:fu.jiawei@outlook.com"
+
+  # [[params.social]]
+  #   name = "github"
+  #   url  = "https://github.com/fujiawei-dev"
+
+[languages]
+  [languages.en]
+    keywords = ""
+    weight    = 1
+    menuMore = "Show More"
+    writtenBy = "Written by"
+    lastModDisplay = "Modified:"
+    readMore = "Read More"
+    readOtherPosts = "Read Other Posts"
+    newerPosts = "Newer Posts"
+    olderPosts = "Older Posts"
+
+    dateFormatSingle = "2006.01.02"
+    dateFormatList = "2006.01.02"
+
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name       = "About"
+    url        = "/about/"
+  [[menu.main]]
+    identifier = "archive"
+    name       = "Archive"
+    url        = "/archive/"
+  [[menu.main]]
+    identifier = "posts"
+    name       = "Posts"
+    url        = "/posts/"
+  [[menu.main]]
+    identifier = "example"
+    name       = "Example"
+    url        = "/example/"
