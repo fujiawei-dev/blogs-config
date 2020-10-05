@@ -22,15 +22,18 @@ https://github.com/gohugoio/hugo/releases
 docker pull klakegg/hugo
 ```
 
+进入 Shell 终端：
+
 ```shell
-# Normal build
-docker run --rm -it -v $(pwd):/src klakegg/hugo:latest
+docker run --rm -it --name hugo -v d:/onedrive/repositories/notes:/src -p 7856:7856 klakegg/hugo:0.74.3-alpine shell
+```
 
-# Run server
-docker run --rm -it -v $(pwd):/src -p 1313:1313 klakegg/hugo server
+```shell
+docker attach hugo --detach-keys=ctrl-d
+```
 
-# Hugo shell
-docker run --rm -it -v $(pwd):/src klakegg/hugo shell
+```shell
+hugo server -p 8080
 ```
 
 ## 基本命令
@@ -57,6 +60,8 @@ git submodule add https://github.com/panr/hugo-theme-hello-friend.git themes/hel
 
 ```shell
 hugo new posts/quickstart.md
+
+hugo new posts/docker/quickstart.md
 ```
 
 ## 编译网站
@@ -148,3 +153,33 @@ chapter: false  # 将页面设置为章节
 draft: false  # 草稿
 ---
 ```
+
+## 自定义分类
+
+- tag：文章标签
+- topic：文章主题/文章系列
+- category：文章分类
+
+### 配置分类
+
+在 `config.toml` 中增加分类。
+
+```ini
+[taxonomies]
+  tag = "tags"
+  series = "series"
+  category = "categories"
+```
+
+而将每个 post 的头部也相应增加对应的分类：
+
+```yaml
+tags: ["hugo"]
+series: ["部署个人博客系统"]
+categories: ["浅尝辄止"]
+```
+
+### 分类集合列表
+
+- `example.com/tags/` 列出 tags 中的所有术语；
+- `example.com/tags/docker` 列出 tags 标为 docker 的所有网页列表。

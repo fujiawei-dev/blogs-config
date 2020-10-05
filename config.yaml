@@ -1,0 +1,13 @@
+---
+baseurl: "/"
+DefaultContentLanguage: "zh-cn"
+hasCJKLanguage: true
+languageCode: "zh-cn"
+title: "Life-Long Learning"
+theme: "hello-friend"
+metaDataFormat: "yaml"
+algolia:
+  index: "notes"
+  key: "fddb7ac05baf79cac5c291a4c000d162"
+  appID: "V484EHT8P4"
+---

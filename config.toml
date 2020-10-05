@@ -3,6 +3,10 @@ baseURL = "localhost"
 # 网站标题
 title   = "Life-Long Learning"
 description = "Here is a collection of my notes."
+author = "Rustle Karl"
+
+# 摘要长度
+summaryLength = 5
 
 # 语言
 languageCode = "en-us"
@@ -12,7 +16,7 @@ languageCode = "en-us"
 theme = "hello-friend"
 
 # 分页数量
-paginate  = 5
+paginate  = 10
 
 # 文件目录
 archetypeDir = "archetypes"
@@ -39,19 +43,22 @@ useRelativeCover = true
 # Set the unicode character used for the "return" link in page footnotes.
 footnotereturnlinkcontents = "↩"
 
+# TODO 搜索
+[params.algolia]
+  appId = "V484EHT8P4"
+  indexName = "notes"
+  searchOnlyKey = "4977360d5e70c48256a6f11534b05780"
+
 [permalinks]
   posts = "/posts/:year/:month/:day/:title/"
-
-[author]
-  name = "Rustle Karl"
 
 [blackfriday]
   hrefTargetBlank = true
 
 [taxonomies]
-  tag      = "tags"
-  category = "categories"
-  series   = "series"
+  tag      = "tags"  # 文章标签
+  category = "categories"  # 文章分类
+  series   = "series"  # 文章主题/文章系列
 
 [params]
   # dir name of your blog content (default is `content/posts`).
@@ -62,13 +69,14 @@ footnotereturnlinkcontents = "↩"
   defaultTheme = "dark"
 
   # if you set this to 0, only submenu trigger will be visible
-  # showMenuItems = 2
+  # showMenuItems = 5
 
   # Show reading time in minutes for posts
   showReadingTime = false
 
   # 显示自动生成的目录
-  # toc = true
+  toc = true
+  autoCollapseToc = true   # Auto expand and collapse toc
 
   # Colors for favicons
   [params.favicon.color]
@@ -77,7 +85,7 @@ footnotereturnlinkcontents = "↩"
     theme = "#252627"
 
   [params.logo]
-    logoText     = "# cd /root/"
+    logoText     = "# ls /root/"
     logoHomeLink = "/"
     # Set true to remove the logo cursor entirely.
     # logoCursorDisabled = false
@@ -98,7 +106,7 @@ footnotereturnlinkcontents = "↩"
   [languages.en]
     keywords = ""
     weight    = 1
-    menuMore = "Show More"
+    menuMore = "more"
     writtenBy = "Written by"
     lastModDisplay = "Modified:"
     readMore = "Read More"
@@ -111,18 +119,40 @@ footnotereturnlinkcontents = "↩"
 
 [menu]
   [[menu.main]]
+    identifier = "series"
+    name       = "series"
+    url        = "/series/"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "tags"
+    name       = "tags"
+    url        = "/tags/"
+    weight = 12
+
+  [[menu.main]]
     identifier = "about"
-    name       = "About"
+    name       = "about"
     url        = "/about/"
+
   [[menu.main]]
     identifier = "archive"
-    name       = "Archive"
+    name       = "archive"
     url        = "/archive/"
+    weight = 16
+
+  [[menu.main]]
+    identifier = "categories"
+    name       = "categories"
+    url        = "/categories/"
+
   [[menu.main]]
     identifier = "posts"
-    name       = "Posts"
+    name       = "posts"
     url        = "/posts/"
+    weight = 14
+
   [[menu.main]]
     identifier = "example"
-    name       = "Example"
+    name       = "example"
     url        = "/example/"
