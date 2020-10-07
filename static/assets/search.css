@@ -58,11 +58,12 @@
 
 .aa-dropdown-menu {
     background-color: #1d1c1c;
-    width: 300px;
+    width: 400px;
     margin-top: 15%;
     box-sizing: border-box;
     -webkit-transition: .5s;
     transition: .5s;
+    border-radius: 10px;
 }
 
 .aa-suggestion {
@@ -81,10 +82,14 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 10px;
 }
 
 .aa-suggestion a {
     text-decoration: none;
+    white-space: nowrap;
 }
 
 .aa-suggestion:hover,
