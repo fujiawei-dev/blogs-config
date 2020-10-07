@@ -4,7 +4,9 @@ date: "2020-10-06"
 author: "Rustle Karl"
 ---
 
-> 嵌入音乐后目录跳转无效。
+> 嵌入音乐后，中文章节目录跳转无效，英文仍有效。
+
+## --- First ---
 
 ## [风吻轻铃]
 
@@ -44,3 +46,6 @@ author: "Rustle Karl"
 ## [倾心日系]
 
 {{<music auto="https://music.163.com/#/playlist?id=162701435">}}
+
+
+## --- Last ---

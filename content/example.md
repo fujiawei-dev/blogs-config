@@ -162,6 +162,16 @@ I was reading *Les Misérables* recently.
 
 {{<link "music">}}
 
+## 看板娘
+
+页面左下角，关闭了设置和对白。
+
+```toml
+[params]
+  # 是否开启看板娘
+  live2D = true
+```
+
 ## 评论区
 
 评论区基于 Valine 和 Leancloud 实现。
