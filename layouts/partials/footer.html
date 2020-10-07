@@ -1,5 +1,19 @@
-<!-- Copyright -->
+<!-- 统计文章篇数和字数 -->
+{{ $scratch := newScratch }}
+{{ range (where .Site.Pages "Kind" "page" )}}
+{{ $scratch.Add "total" .WordCount }}
+{{ end }}
+
 <footer class="footer">
+
+  <!-- 统计文章篇数和字数 -->
+  <div class="footer__inner">
+    <div class="copyright copyright--user">
+      <span>计 {{ len (where .Site.RegularPages "Section" "posts") }} 篇 | {{$scratch.Get "total" }} 字</span>
+    </div>
+  </div>
+  <br>
+  <!-- Copyright -->
   <div class="footer__inner">
     <div class="copyright copyright--user">
       <span>Copyright © 2019-{{ now.Year }} | Rustle Karl</span>

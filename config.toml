@@ -16,7 +16,7 @@ languageCode = "en-us"
 theme = "hello-friend"
 
 # 分页数量
-paginate  = 10
+paginate  = 5
 
 # 文件目录
 archetypeDir = "archetypes"
@@ -31,11 +31,28 @@ buildExpired = false
 canonifyURLs = true
 
 enableRobotsTXT = true
+
+
+# ======== 评论 ========
+[params.valine]
+	enable = true
+    appId = 'Lh1YFw4l6DiggQrfu6aiCN7X-gzGzoHsz'
+    appKey = 'NkEgd3s2fNmceT0q1oFI9tnS'
+    placeholder = '既然来了，那就留个痕迹吧~'
+    visitor = true
+# ======== 评论 ========
+
+# ======== 添加修改时间 ========
+# 用 Docker 则必须关闭
 enableGitInfo   = false
+[frontmatter]
+    lastmod = ["lastmod", ":git", ":fileModTime", ":default"]
+# ======== 添加修改时间 ========
+
 enableEmoji     = true
 enableMissingTranslationPlaceholders = false
-disableRSS     = false
-disableSitemap = false
+disableRSS     = true
+disableSitemap = true
 disable404     = false
 disableHugoGeneratorInject = false
 useRelativeCover = true
@@ -43,11 +60,21 @@ useRelativeCover = true
 # Set the unicode character used for the "return" link in page footnotes.
 footnotereturnlinkcontents = "↩"
 
-# TODO 搜索
+# ======== 搜索 ========
 [params.algolia]
   appId = "V484EHT8P4"
   indexName = "notes"
   searchOnlyKey = "4977360d5e70c48256a6f11534b05780"
+
+[outputs]
+    home = ["HTML", "RSS", "Algolia"]
+
+[outputFormats.Algolia]
+  baseName = "algolia"
+  isPlainText = true
+  mediaType = "application/json"
+  notAlternative = true
+# ======== 搜索 ========
 
 [permalinks]
   posts = "/posts/:year/:month/:day/:title/"
@@ -69,10 +96,11 @@ footnotereturnlinkcontents = "↩"
   defaultTheme = "dark"
 
   # if you set this to 0, only submenu trigger will be visible
-  # showMenuItems = 5
+  showMenuItems = 4
 
   # Show reading time in minutes for posts
-  showReadingTime = false
+  showReadingTime = true
+  MinuteReadingTime = "minutes read"
 
   # 显示自动生成的目录
   toc = true
@@ -107,12 +135,14 @@ footnotereturnlinkcontents = "↩"
     keywords = ""
     weight    = 1
     menuMore = "more"
-    writtenBy = "Written by"
-    lastModDisplay = "Modified:"
+    writtenBy = ""
     readMore = "Read More"
     readOtherPosts = "Read Other Posts"
     newerPosts = "Newer Posts"
     olderPosts = "Older Posts"
+
+    # 修改时间样式
+    lastModDisplay = "updated:"
 
     dateFormatSingle = "2006.01.02"
     dateFormatList = "2006.01.02"
@@ -156,3 +186,13 @@ footnotereturnlinkcontents = "↩"
     identifier = "example"
     name       = "example"
     url        = "/example/"
+
+  [[menu.main]]
+    identifier = "music"
+    name       = "music"
+    url        = "/music/"
+
+  [[menu.main]]
+    identifier = "photos"
+    name       = "photos"
+    url        = "/photos/"

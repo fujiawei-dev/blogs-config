@@ -1,14 +1,5 @@
 <nav class="menu">
   <ul class="menu__inner menu__inner--desktop">
-
-    <!-- 修改部分 TODO 搜索功能-->
-    <!-- {{- if .Site.Params.algolia.appId -}}
-    <li>
-      <input type="search" placeholder="Search" />
-    </li>
-    {{- end -}} -->
-    <!-- 修改部分 -->
-
     {{ if or $.Site.Params.showMenuItems (eq $.Site.Params.showMenuItems 0) }}
     {{ range first $.Site.Params.showMenuItems $.Site.Menus.main }}
     {{ if not .HasChildren }}
@@ -48,3 +39,17 @@
   </ul>
 
 </nav>
+
+<!-- 修改部分 搜索功能-->
+{{- if .Site.Params.algolia.appId -}}
+<div id="modalSearch" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        {{ partial "search.html" . }}
+      </div>
+    </div>
+  </div>
+</div>
+{{- end -}}
+<!-- 修改部分 -->

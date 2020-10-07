@@ -1,0 +1,121 @@
+{{$URL := default (.Get 0) (.Get "src") }}
+
+{{/*  这个东西的文件系统的路径，坑死我了  */}}
+{{ with .Site.GetPage $URL }}
+
+{{ with .Params.feature }}
+{{ $.Scratch.Set "feature" . }}
+{{ else }}
+{{ with findRE `!\[(.*?)\]\((.*?)\)` .RawContent }}
+{{ range first 1 . }}
+{{ $url := replaceRE `!\[(.*?)\]\((.*?)\)` "$2" . }}
+{{$.Scratch.Set "feature" $url }}
+{{ end }}
+{{ else }}
+{{ $.Scratch.Set "feature" false }}
+{{ end }}
+{{ end }}
+
+<style>
+    .dark-theme .post-preview {
+        background: #3b3d42;
+    }
+
+    .post-preview {
+        max-width: 500px;
+        max-height: 200px;
+        margin: 1em auto;
+        position: relative;
+        display: flex;
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .25), 0 0 1px rgba(0, 0, 0, .25);
+    }
+
+    .post-preview--meta {
+        width: 75%;
+        padding: 25px;
+        overflow: hidden;
+    }
+
+    .post-preview--middle {
+        line-height: 28px;
+    }
+
+    .post-preview--title {
+        font-size: 18px;
+        margin: 0 !important;
+    }
+
+    .post-preview--title a {
+        text-decoration: none;
+    }
+
+    .post-preview--date {
+        font-size: 14px;
+        color: #999;
+    }
+
+    .post-preview--excerpt {
+        font-size: 14px;
+        line-height: 1.825;
+    }
+
+    .post-preview--excerpt p {
+        margin-bottom: 0;
+    }
+
+    .post-preview--image {
+        height: auto;
+        width: 25%;
+        float: right;
+        border-top-right-radius: 2px !important;
+        border-bottom-right-radius: 2px !important;
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+    }
+
+    @media (max-width:550px) {
+        .post-preview {
+            width: 95%;
+            height: 120px;
+        }
+
+        .post-preview--meta {
+            padding: 15px;
+        }
+
+        .post-preview--image {
+            height: 120px !important;
+        }
+
+        .post-preview--excerpt {
+            display: none;
+        }
+
+        .post-preview--middle {
+            line-height: 19px;
+        }
+    }
+</style>
+
+<div class="post-preview">
+    <div class="post-preview--meta" style="width:100%;">
+        <div class="post-preview--middle">
+            <h4 class="post-preview--title">
+                <a target="_blank" href="{{ .Permalink }}">{{ .Title }}</a>
+            </h4>
+            <time class="post-preview--date">{{ .Date.Format ( default "2006-01-02") }}</time>
+            {{ if .Params.tags }}
+            <small>{{ range .Params.tags }}#{{ . }}&nbsp;{{ end }}</small>
+            {{ end }}
+            <section style="max-height:96px;overflow:hidden;" class="post-preview--excerpt">
+                {{ .Summary | plainify }}
+            </section>
+        </div>
+    </div>
+    {{with ($.Scratch.Get "feature")}}
+    <img rel="link" loading="lazy" class="post-preview--image avatar" src="{{ . }}">
+    {{end}}
+</div>
+{{ end }}

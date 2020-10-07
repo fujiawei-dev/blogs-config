@@ -1,0 +1,55 @@
+{{/*  头像与网站链接  */}}
+
+<style>
+    .archive-item {
+        padding: 10px 15px;
+        font-size: 14px;
+        width: 100%;
+        box-sizing: border-box;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .archive-item img {
+        border-radius: 1rem;
+        margin: 4px 12px 0 0;
+        float: left;
+        width: 48px;
+        height: 48px;
+    }
+
+    .archive-item a {
+        line-height: 28px;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .archive-item-title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+    }
+
+    .archive-item-meta {
+        font-size: 13px;
+        font-weight: 200;
+        display: block;
+        word-break: break-all;
+    }
+
+    .archive-item.links-item {
+        width: 100%;
+        margin: 1em 0;
+    }
+</style>
+
+{{ if .Get "url" }}
+<div class="archive-item links-item">
+    {{/*  <img loading="lazy" class="archive-list-image" src=https://gravatar.loli.net/avatar/{{ md5 (.Get "email") }}> </img> <a  */}}
+    <img loading="lazy" class="archive-list-image" src=https://gravatar.zeruns.tech/avatar/{{ md5 (.Get "email") }}> </img> <a
+        href={{ .Get "url" }}>{{ .Get "nickName" }} - {{ .Get "email" }}</a>
+    <span
+        class="archive-item-meta">{{- if .Get "desc" -}}{{- .Get "desc" -}}{{- else -}}{{- .Get "url" -}}{{- end -}}</span>
+</div>
+{{ end }}

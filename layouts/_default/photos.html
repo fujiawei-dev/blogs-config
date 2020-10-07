@@ -1,0 +1,54 @@
+{{ define "main" }}
+
+<style>
+    .post {
+        padding: 10px;
+        margin: 0 auto 20px;
+        border: none;
+        text-align: center;
+    }
+
+    .post:not(:last-of-type) {
+        border-bottom: none;
+    }
+
+    .page-photos figure {
+        width: 80%;
+        margin: 0 auto 1rem;
+    }
+
+    .page-photos figure img {
+        box-shadow: 0 12px 40px rgba(0, 0, 0, .15);
+        border-radius: 8px;
+        display: inline;
+    }
+
+    @media screen and (max-width: 860px) {
+        .page-photos figure {
+            width: 100%;
+            margin: 0 auto 1rem;
+        }
+
+        .page-photos figure img {
+            border-radius: 0px;
+        }
+    }
+</style>
+
+<div class="post">
+    <h2 class="post-title">{{.Title}}</h2>
+</div>
+
+{{ $dst := .Params.Dst }}
+{{ $baseDir := (printf "%s/%s" .Params.BaseDir $dst) }}
+{{ $baseUrl := .Params.BaseUrl }}
+
+<div class="page-photos">
+    {{ range (readDir $baseDir ) }}
+    <figure>
+        <img src={{ (printf "%s/%s/%s" $baseUrl $dst .Name) }} alt="{{ .Name }}" />
+        {{/*  <figcaption>{{ .Name | replaceRE "(.*)[.].*" "$1"}}</figcaption> */}}
+    </figure>
+    {{ end }}
+</div>
+{{ end }}

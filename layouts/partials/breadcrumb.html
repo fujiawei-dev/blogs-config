@@ -1,0 +1,43 @@
+<style>
+    .breadcrumb {
+        padding: 8px 15px;
+        margin-bottom: 40px;
+        list-style: none;
+        margin-left: 0px;
+        border-radius: 10px;
+        box-sizing: border-box;
+    }
+
+    .breadcrumb>li {
+        font-size: 16px;
+        display: inline-block;
+        opacity: .7;
+    }
+
+    .breadcrumb>li+li:before {
+        color: #ccc;
+        content: "/";
+    }
+
+    .breadcrumb li a {
+        text-decoration: none;
+    }
+
+    .dark-theme .breadcrumb {
+        background-color: #222121;
+    }
+</style>
+
+<div class="breadcrumb">
+    {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
+</div>
+{{ define "breadcrumbnav" }}
+{{ if .p1.Parent }}
+{{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 )  }}
+{{ else if not .p1.IsHome }}
+{{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 )  }}
+{{ end }}
+<li {{ if eq .p1 .p2 }} class="active" {{ end }}>
+    <a href="{{ .p1.Permalink }}">{{ .p1.Title }}</a>
+</li>
+{{ end }}
