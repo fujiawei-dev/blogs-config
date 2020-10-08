@@ -24,8 +24,6 @@ draft: false  # 草稿
 docker pull klakegg/hugo
 ```
 
-端口号不一致将出现跨域问题。另外 Docker 无法实时更新。
-
 `hugo server`
 
 **D 盘**
@@ -34,10 +32,24 @@ docker pull klakegg/hugo
 docker run --restart=always -itd --name hugo -v d:/onedrive/repositories/notes:/src:ro,z -p 12345:12345 klakegg/hugo server -p 12345
 ```
 
+**H 盘**
+
+```shell
+docker run --restart=always -itd --name hugo -v h:/onedrive/repositories/notes:/src:ro,z -p 12345:12345 klakegg/hugo server -p 12345
+```
+
 **E 盘**
 
 ```shell
 docker run --restart=always -itd --name hugo -v e:/onedrive/repositories/notes:/src:ro,z -p 12345:12345 klakegg/hugo server -p 12345
+```
+
+### 重启容器
+
+端口号不一致将出现跨域问题。另外 Docker 无法实时更新。解决方法是创建 Windows 任务计划，定时重启。
+
+```shell
+docker restart hugo
 ```
 
 ## Nginx 容器部署

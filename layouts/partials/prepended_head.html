@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="{{ "assets/toc.css" | absURL }}" />
 
 {{/*  看板娘  */}}
-{{- if .Site.Params.Live2D -}}
+{{- if and .Params.Live2D .Site.Params.Live2D | default true -}}
 <script>
     {{/*  设置看板娘样式  */}}
     localStorage.setItem("modelId", 5);

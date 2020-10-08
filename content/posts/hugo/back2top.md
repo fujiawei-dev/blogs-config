@@ -16,6 +16,7 @@ chapter: false  # 将页面设置为章节
 
 index: true  # 文章是否可以被索引
 draft:  false  # 草稿
+toc: false
 ---
 
 {{< code language="html" title="layouts/partials/extended_footer.html" id="1" expand="Show" collapse="Hide" isCollapsed="false" >}}

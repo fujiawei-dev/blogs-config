@@ -140,13 +140,17 @@ I was reading *Les Misérables* recently.
 
 ## 卡片式显示内链
 
-**这个东西是文件系统的路径，坑死我了！**
-
 ```shell
 {{ <link "music"> }}
 ```
 
 {{<link "about">}}
+
+**这个东西是文件系统的路径，不是 URL，坑死我了！**
+
+```shell
+{{ <link src="posts/ps/doc/msys2"> }}
+```
 
 ## 音乐
 

@@ -1,4 +1,4 @@
-baseURL = "localhost"
+baseURL = "http://localhost"
 
 # 网站标题
 title   = "Life-Long Learning"
@@ -10,7 +10,6 @@ summaryLength = 5
 
 # 语言
 languageCode = "en-us"
-# languageCode = "zh-cn"
 
 # 主题
 theme = "hello-friend"
@@ -43,8 +42,7 @@ enableRobotsTXT = true
 # ======== 评论 ========
 
 # ======== 添加修改时间 ========
-# 用 Docker 则必须关闭
-enableGitInfo   = false
+enableGitInfo   = false  # 用 Docker 则必须关闭
 [frontmatter]
     lastmod = ["lastmod", ":git", ":fileModTime", ":default"]
 # ======== 添加修改时间 ========
@@ -56,9 +54,6 @@ disableSitemap = true
 disable404     = false
 disableHugoGeneratorInject = false
 useRelativeCover = true
-
-# Set the unicode character used for the "return" link in page footnotes.
-footnotereturnlinkcontents = "↩"
 
 # ======== 搜索 ========
 [params.algolia]
@@ -103,34 +98,14 @@ footnotereturnlinkcontents = "↩"
 
   # 显示自动生成的目录
   toc = true
-  autoCollapseToc = true   # Auto expand and collapse toc
+  autoCollapseToc = true   # 自动展开目录
 
   # 是否开启看板娘
   live2D = true
 
-  # Colors for favicons
-  [params.favicon.color]
-    mask = "#252627"
-    msapplication = "#252627"
-    theme = "#252627"
-
   [params.logo]
     logoText     = "# ls /root/"
     logoHomeLink = "/"
-    # Set true to remove the logo cursor entirely.
-    # logoCursorDisabled = false
-    # Set to a valid CSS color to change the cursor in the logo.
-    # logoCursorColor    = "#67a2c9"
-    # Set to a valid CSS time value to change the animation duration, "0s" to disable.
-    # logoCursorAnimate  = "2s"
-
-  # [[params.social]]
-  #   name = "email"
-  #   url  = "mailto:fu.jiawei@outlook.com"
-
-  # [[params.social]]
-  #   name = "github"
-  #   url  = "https://github.com/fujiawei-dev"
 
 [languages]
   [languages.en]
@@ -174,12 +149,6 @@ footnotereturnlinkcontents = "↩"
     url        = "/archive/"
     weight = 16
 
-  # [[menu.main]]
-  #   identifier = "categories"
-  #   name       = "categories"
-  #   url        = "/categories/"
-  #   weight = 20
-
   [[menu.main]]
     identifier = "posts"
     name       = "posts"
@@ -196,8 +165,3 @@ footnotereturnlinkcontents = "↩"
     identifier = "music"
     name       = "music"
     url        = "/music/"
-
-  [[menu.main]]
-    identifier = "photos"
-    name       = "photos"
-    url        = "/photos/"
