@@ -6,8 +6,6 @@ author: "Rustle Karl"
 
 > 嵌入音乐后，中文章节目录跳转无效，英文仍有效。
 
-## --- First ---
-
 ## [风吻轻铃]
 
 {{<music auto="https://music.163.com/#/playlist?id=44378207">}}
@@ -46,6 +44,3 @@ author: "Rustle Karl"
 ## [倾心日系]
 
 {{<music auto="https://music.163.com/#/playlist?id=162701435">}}
-
-
-## --- Last ---

@@ -1,0 +1,73 @@
+.back-to {
+    background: #1d1c1c71;
+    color: #fff;
+    --background-secondary: #eaeaea;
+    --header: #fafafa;
+    --color: rgb(255, 250, 250);
+    --color-secondary: #999;
+    --border-color: #dcdcdc;
+
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    bottom: 40px;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+    -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+    cursor: pointer;
+    display: block;
+    opacity: 1;
+    outline: 0;
+    position: fixed;
+    right: 40px;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-transition: bottom .5s, opacity .5s;
+    -o-transition: bottom .5s, opacity .5s;
+    -moz-transition: bottom .5s, opacity .5s;
+    transition: bottom .5s, opacity .5s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    height: 42px;
+    width: 42px;
+    z-index: 1
+}
+
+.dark-theme .back-to {
+    background: #1d1c1c;
+    color: #fff;
+}
+
+.back-to svg {
+    display: block;
+    fill: currentColor;
+    height: 18px;
+    margin: 12px auto 0;
+    width: 18px
+}
+
+.back-to.hidden {
+    bottom: -42px;
+    opacity: 0
+}
+
+@media (max-width:860px) {
+    #back-to {
+        display: none !important;
+    }
+}
+
+/* 滚轮样式 */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    height: 10px;
+    background-color: rgb(95, 93, 93);
+    border-radius: 16px;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.Language }}">
+
+<head>
+  {{ block "title" . }}
+  <title>
+    {{ if .IsHome }}{{ $.Site.Title }}{{ with $.Site.Params.Subtitle }} —
+    {{ . }}{{ end }}{{ else }}{{ .Title }} ::
+    {{ $.Site.Title }}{{ with $.Site.Params.Subtitle }} — {{ . }}{{ end }}{{ end }}
+  </title>
+  {{ end }}
+  {{ partial "head.html" . }}
+</head>
+
+<body class="{{ if ne $.Site.Params.defaultTheme "light" -}} dark-theme {{- end -}}">
+  <div class="container">
+
+    <!-- 锚点 -->
+    <a id="back2top"></a>
+
+    {{ partial "header.html" . }}
+
+    <div class="content">
+      {{ block "main" . }} {{ end }}
+    </div>
+
+    <!-- 锚点 -->
+    <a id="back2bottom"></a>
+
+    {{ partial "extended_body.html" . }}
+
+    {{ block "footer" . }}
+    {{ partial "footer.html" . }}
+    {{ end }}
+  </div>
+
+  {{ if $.Site.GoogleAnalytics }}
+  {{ template "_internal/google_analytics.html" . }}
+  {{ end }}
+
+
+</body>
+
+</html>

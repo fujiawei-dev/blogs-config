@@ -26,6 +26,8 @@ docker pull klakegg/hugo
 
 `hugo server`
 
+### 运行命令
+
 **D 盘**
 
 ```shell
@@ -91,3 +93,5 @@ docker run -d --name hugo-nginx -v e:/onedrive/repositories/notes/public:/app/pu
 ```
 
 不太对，CSS 都缺失了，待填坑。。。
+
+原因是端口不一致。

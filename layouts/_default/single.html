@@ -4,29 +4,13 @@
 
 <div class="post">
 
-  <!-- 路径导航 TODO -->
-  <!-- {{ partial "breadcrumb.html" . }} -->
-  <!-- 路径导航 -->
-
   <h1 class="post-title">{{ .Title | markdownify }}</h1>
   <div class="post-meta">
     {{ if .Date | default nil }}
     <span class="post-date">
       {{ .Date.Format ($.Site.Params.DateFormatSingle | default "2006-01-02") }}
     </span>
-
-    {{ if eq .Type $contentTypeName }}
-    {{ if $.Site.Params.LastModDisplay }}
-    {{ partial "lastmod.html" . }}
     {{ end }}
-    {{ end }}
-    {{ end }}
-
-    {{/*  显示作者  */}}
-    {{ with .Params.Author }}
-    <span class="post-author">/{{ $.Site.Params.WrittenBy | default "" }} {{ . }}</span>
-    {{ end }}
-
   </div>
 
   {{/*  评论与阅读统计  */}}
@@ -34,14 +18,21 @@
     {{- if .Site.Params.valine.enable -}}
     <span><span class="valine-comment-count" data-xid="{{ .RelPermalink }}">0</span> Comments / <span
         id="{{ .RelPermalink }}" class="leancloud_visitors" data-flag-title="{{ .Title }}"><span
-          class="leancloud-visitors-count">0</span> Views</span></span>
+          class="leancloud-visitors-count">0</span> Views / </span></span>
     {{ end }}
 
-    {{/*  显示阅读时间  */}}
-    {{ if $.Site.Params.ShowReadingTime }}
-    <span class="post-read-time">/ Need {{ .ReadingTime }}
-      {{ $.Site.Params.MinuteReadingTime | default "minutes read" }}</span>
-    {{ end }}
+    <!-- 计算修改时间 -->
+    <span class="post-date">
+      {{ $ageDays := div (sub now.Unix .Lastmod.Unix) 86400 }}
+      {{ $ageMonths := div (sub now.Unix .Lastmod.Unix) 2592000 }}
+      {{ if eq $ageDays 0 }}
+      Updated today
+      {{ else if lt $ageDays 31 }}
+      Updated {{ $ageDays }} {{ cond (eq $ageDays 1) "day" "days"}} ago
+      {{ else }}
+      Updated {{ $ageMonths }} {{ cond (eq $ageMonths 1) "month" "months" }} ago
+      {{ end }}
+    </span>
 
   </div>
 
@@ -69,11 +60,13 @@
   {{ end }}
 
   <div class="post-content">
+
     {{/*  目录  */}}
     {{ if and .Params.Toc $.Site.Params.Toc | default true }}
     {{ partial "toc.html" . }}
     {{ end }}
     {{/*  目录  */}}
+
     {{ .Content }}
   </div>
 
@@ -81,7 +74,7 @@
   {{ if or .NextInSection .PrevInSection }}
   <div class="pagination">
     <div class="pagination__title">
-      <span class="pagination__title-h">{{ $.Site.Params.ReadOtherPosts | default "Read other posts" }}</span>
+      <span class="pagination__title-h">{{ $.Site.Params.ReadOtherPosts | default "More" }}</span>
       <hr />
     </div>
     <div class="pagination__buttons">
@@ -107,8 +100,8 @@
   {{ end }}
 
   {{ if not (eq .Params.Comments "false") }}
-  {{/*  {{ if or (eq .Type $.Site.Params.contentTypeName) (.Params.Comments) }} */}}
   {{ partial "comments.html" . }}
   {{ end }}
+
 </div>
 {{ end }}

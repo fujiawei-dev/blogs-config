@@ -1,76 +1,11 @@
-<link rel="stylesheet" href="{{ "assets/search.css" | absURL }}" />
-<link rel="stylesheet" href="{{ "assets/scrollbar.css" | absURL }}" />
-<link rel="stylesheet" href="{{ "assets/toc.css" | absURL }}" />
+<link rel="stylesheet" href="{{ "assets/css/fonts.css" | absURL }}" />
+<link rel="stylesheet" href="{{ "assets/css/archive.css" | absURL }}" />
+<link rel="stylesheet" href="{{ "assets/css/controls.css" | absURL }}" />
+<link rel="stylesheet" href="{{ "assets/css/posts.css" | absURL }}" />
+<link rel="stylesheet" href="{{ "assets/css/terms.css" | absURL }}" />
+<link rel="stylesheet" href="{{ "assets/css/search.css" | absURL }}" />
+<link rel="stylesheet" href="{{ "assets/css/toc.css" | absURL }}" />
 
-{{/*  看板娘  */}}
-{{- if and .Params.Live2D .Site.Params.Live2D | default true -}}
-<script>
-    {{/*  设置看板娘样式  */}}
-    localStorage.setItem("modelId", 5);
-    localStorage.setItem("modelTexturesId", 0);
-</script>
-<style>
-    #waifu {
-        margin-bottom: 0 !important;
-    }
-    {{/*  隐藏设置和对话  */}}
-    #waifu-tool {
-        display: none;
-    }
-    #waifu-tips {
-        display: none;
-    }
-    #waifu #live2d {
-        height: 200px !important;
-        width: 200px !important;
-    }
-</style>
-<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
-{{- end -}}
-{{/*  看板娘  */}}
+<script src="{{ "assets/js/controls.js" | absURL }}"></script>
 
-<style>
-    #back-to-top {
-        background: #1d1c1c;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        border-radius: 50%;
-        bottom: 80px;
-        -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
-        -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
-        color: #fff;
-        cursor: pointer;
-        display: block;
-        opacity: 1;
-        outline: 0;
-        position: fixed;
-        right: 85px;
-        -webkit-tap-highlight-color: transparent;
-        -webkit-touch-callout: none;
-        -webkit-transition: bottom .2s, opacity .2s;
-        -o-transition: bottom .2s, opacity .2s;
-        -moz-transition: bottom .2s, opacity .2s;
-        transition: bottom .2s, opacity .2s;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        height: 42px;
-        width: 42px;
-        z-index: 1
-    }
-
-    #back-to-top svg {
-        display: block;
-        fill: currentColor;
-        height: 18px;
-        margin: 12px auto 0;
-        width: 18px
-    }
-
-    #back-to-top.hidden {
-        bottom: -42px;
-        opacity: 0
-    }
-</style>
+{{ partial "live2d.html" . }}

@@ -1,0 +1,53 @@
+@font-face {
+    font-family: FiraCode;
+    font-style: normal;
+    font-weight: 400;
+    font-feature-settings: "liga", "tnum", "case", "calt", "zero", "ss01", "locl";
+    src: url(fonts/FiraCode/FiraCode-Regular.woff2) format("woff2"), url(fonts/FiraCode/FiraCode-Regular.woff) format("woff");
+    font-display: swap
+}
+
+@font-face {
+    font-family: FiraCode;
+    font-style: italic;
+    font-weight: 400;
+    font-feature-settings: "liga", "tnum", "case", "calt", "zero", "ss01", "locl";
+    src: url(fonts/FiraCode/FiraCode-Italic.woff2) format("woff2"), url(fonts/FiraCode/FiraCode-Italic.woff) format("woff");
+    font-display: swap
+}
+
+@font-face {
+    font-family: FiraCode;
+    font-style: normal;
+    font-weight: 600;
+    font-feature-settings: "liga", "tnum", "case", "calt", "zero", "ss01", "locl";
+    src: url(fonts/FiraCode/FiraCode-Medium.woff2) format("woff2"), url(fonts/FiraCode/FiraCode-Medium.woff) format("woff");
+    font-display: swap
+}
+
+@font-face {
+    font-family: FiraCode;
+    font-style: italic;
+    font-weight: 600;
+    font-feature-settings: "liga", "tnum", "case", "calt", "zero", "ss01", "locl";
+    src: url(fonts/FiraCode/FiraCode-MediumItalic.woff2) format("woff2"), url(fonts/FiraCode/FiraCode-MediumItalic.woff) format("woff");
+    font-display: swap
+}
+
+@font-face {
+    font-family: FiraCode;
+    font-style: normal;
+    font-weight: 800;
+    font-feature-settings: "liga", "tnum", "case", "calt", "zero", "ss01", "locl";
+    src: url(fonts/FiraCode/FiraCode-Bold.woff2) format("woff2"), url(fonts/FiraCode/FiraCode-Bold.woff) format("woff");
+    font-display: swap
+}
+
+@font-face {
+    font-family: FiraCode;
+    font-style: italic;
+    font-weight: 800;
+    font-feature-settings: "liga", "tnum", "case", "calt", "zero", "ss01", "locl";
+    src: url(fonts/FiraCode/FiraCode-BoldItalic.woff2) format("woff2"), url(fonts/FiraCode/FiraCode-BoldItalic.woff) format("woff");
+    font-display: swap
+}

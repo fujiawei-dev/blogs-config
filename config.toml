@@ -15,7 +15,7 @@ languageCode = "en-us"
 theme = "hello-friend"
 
 # 分页数量
-paginate  = 5
+paginate  = 10
 
 # 文件目录
 archetypeDir = "archetypes"
@@ -84,7 +84,7 @@ useRelativeCover = true
 
 [params]
   # 主页默认显示的类别
-  contentTypeName = "posts"
+  contentTypeName = "archive"
 
   # "light" or "dark"
   defaultTheme = "dark"
@@ -113,10 +113,7 @@ useRelativeCover = true
     weight    = 1
     menuMore = "more"
     writtenBy = ""
-    readMore = "Read More"
     readOtherPosts = "Read Other Posts"
-    newerPosts = "Newer Posts"
-    olderPosts = "Older Posts"
 
     # 修改时间样式
     lastModDisplay = "updated:"
@@ -129,7 +126,7 @@ useRelativeCover = true
     identifier = "series"
     name       = "series"
     url        = "/series/"
-    weight = 10
+    weight = 14
 
   [[menu.main]]
     identifier = "tags"
@@ -138,28 +135,22 @@ useRelativeCover = true
     weight = 12
 
   [[menu.main]]
-    identifier = "about"
-    name       = "about"
-    url        = "/about/"
-    weight = 20
-
-  [[menu.main]]
     identifier = "archive"
     name       = "archive"
     url        = "/archive/"
-    weight = 16
-
-  [[menu.main]]
-    identifier = "posts"
-    name       = "posts"
-    url        = "/posts/"
-    weight = 20
+    weight = 10
 
   [[menu.main]]
     identifier = "example"
     name       = "example"
     url        = "/example/"
     weight = 18
+
+  [[menu.main]]
+    identifier = "about"
+    name       = "about"
+    url        = "/about/"
+    weight = 20
 
   [[menu.main]]
     identifier = "music"

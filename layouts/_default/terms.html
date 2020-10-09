@@ -1,0 +1,39 @@
+{{ define "main" }}
+
+{{ $type := .Type }}
+
+{{ if eq $type "tags" }}
+
+<div class="terms">
+  <ul class="terms__tags">
+    {{ range $key, $value := .Data.Terms.Alphabetical }}
+    {{ $name := .Name }}
+    {{ $count := .Count }}
+    {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
+    <li class="terms_tag">
+      <a href="{{ .Permalink }}">#{{ .Name }} <span class="terms__term-count">{{ $count }}</span></a>
+    </li>
+    {{ end }}
+    {{ end }}
+  </ul>
+</div>
+{{ end }}
+
+{{ if eq $type "series" }}
+
+<div class="terms">
+  <ul class="terms__series">
+    {{ range $key, $value := .Data.Terms.Alphabetical }}
+    {{ $name := .Name }}
+    {{ $count := .Count }}
+    {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
+    <li class="terms__term">
+      <a href="{{ .Permalink }}">@{{ .Name }} <span class="terms__term-count">{{ $count }}</span></a>
+    </li>
+    {{ end }}
+    {{ end }}
+  </ul>
+</div>
+{{ end }}
+
+{{ end }}

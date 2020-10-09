@@ -1,0 +1,118 @@
+/* Archive 页面样式 */
+
+.archive {
+    width: 100%;
+    max-width: 900px;
+    text-align: left;
+    padding: 20px;
+    margin: 0 auto;
+    font-family: Arial, "等线";
+}
+
+.archive__group-month {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 0
+}
+
+@media (max-width:683px) {
+    .archive__group-month {
+        flex-direction: column
+    }
+}
+
+.archive__group-month:not(:last-of-type) {
+    border-bottom: 1px solid #dcdcdc;
+    border-bottom: 1px solid var(--border-color)
+}
+
+.archive__group-year {
+    margin-top: 40px
+}
+
+@media (max-width:683px) {
+    .archive__group-year {
+        margin-top: 20px
+    }
+}
+
+.archive__group-year:not(:last-of-type) {
+    border-bottom: 1px solid #dcdcdc;
+    border-bottom: 1px solid var(--border-color)
+}
+
+.archive__group-year-header {
+    margin: 10px 0
+}
+
+.archive__group-month-header {
+    margin: 25px 0;
+    width: 200px;
+    opacity: .5
+}
+
+@media (max-width:683px) {
+    .archive__group-month-header {
+        margin: 10px 0 0
+    }
+}
+
+.archive__group-posts {
+    width: 100%
+}
+
+.archive__post {
+    padding: 20px 0;
+}
+
+.archive__post:not(:last-of-type) {
+    border-bottom: 1px solid #dcdcdc;
+    border-bottom: 1px solid var(--border-color)
+}
+
+.archive__post-title {
+    margin: 5px 0;
+    font-size: 23px;
+    font-family: "等线";
+}
+
+.archive__post-title a {
+    display: block;
+    text-decoration: none
+}
+
+.archive__updated-date {
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: 200;
+    float: right;
+    opacity: .5
+}
+
+.archive__post-date {
+    float: right;
+    font-size: 15px;
+    opacity: .7
+}
+
+.archive__post-tags {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    opacity: .8
+}
+
+.archive__post-tags a {
+    text-decoration: none
+}
+
+.archive__post-series {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    opacity: .8
+}
+
+.archive__post-series a {
+    text-decoration: none
+}
