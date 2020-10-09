@@ -1,0 +1,19 @@
+  /* 清除父样式 */
+  #github,
+
+  #github svg {
+      transition: all 1s;
+      fill: #222;
+      color: #fff;
+      position: absolute;
+      top: 0;
+      right: 0;
+      border: 0;
+      width: 70px;
+      height: 70px;
+  }
+
+  #github:hover svg {
+      width: 140px;
+      height: 140px;
+  }

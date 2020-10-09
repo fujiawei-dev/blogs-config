@@ -1,14 +1,14 @@
 ---
 date: {{ .Date }}  # 创建日期
 author: "Rustle Karl"  # 作者
-# cover: "/examples/imgs"  # 封面图，可以是相对于 static 的路径，也可以是相对于当前的路径
 
 # 文章
 title: "{{ replace .Name "-" " " | title }}"  # 文章标题
-description: "文章描述"
-url:  "posts/{{ dateFormat "2006/01/02" .Date }}/{{ .Name }}"  # 设置网页链接，默认使用文件名
+# description: "文章描述"
+# url:  "posts/{{ dateFormat "2006/01/02" .Date }}/{{ .Name }}"  # 设置网页链接，默认使用文件名
+url:  "filepath"  # 设置网页链接，默认使用文件名
 tags: [ "tag1", "tag2"]  # 自定义标签
-series: [ "series1", "series2"]  # 文章主题/文章系列
+series: [ "series"]  # 文章主题/文章系列
 categories: [ "学习笔记"]  # 文章分类
 
 # 章节
