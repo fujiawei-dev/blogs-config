@@ -1,71 +1,57 @@
 {{ define "main" }}
-  <div class="posts">
-    {{ range .Pages }}
-      <div class="post on-list">
-        <h1 class="post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
-        <div class="post-meta">
-          {{ if .Date }}
-            <span class="post-date">
-              {{ .Date.Format ($.Site.Params.DateFormatList | default "2006-01-02") }}
-            </span>
 
-            {{ if $.Site.Params.LastModDisplay }}
-              {{ partial "lastmod.html" . }}
-            {{ end }}
-          {{ end }}
+<div class="posts">
+  {{ range .Pages }}
+  <div class="post on-list">
 
-          {{/*  显示作者  */}}
-          {{ with .Params.Author }}
-          <span class="post-author">/{{ $.Site.Params.WrittenBy | default "" }} {{ . }}</span>{{ end }}
+    <!-- 标题 -->
+    <h3 class="posts__post-title">
+      <a href="{{ .Permalink }}">{{ .Title | markdownify }}
 
-          {{/*  显示阅读时间  */}}
-          {{ if $.Site.Params.ShowReadingTime }}
-          <span class="post-read-time">/ Need {{ .ReadingTime }}
-            {{ $.Site.Params.MinuteReadingTime | default "minutes read" }}</span>
-          {{ end }}
-
-        </div>
-
-        {{ if .Params.tags }}
-          <span class="post-tags">
-            {{ range .Params.tags }}
-              <a href="{{ (urlize (printf "tags/%s" . )) | absURL }}/">#{{ . }}</a>&nbsp;
-            {{ end }}
-          </span>
-        {{ end }}
-
-        {{ if .Params.Cover }}
-          <figure class="post-cover">
-         {{ if .Params.UseRelativeCover }}
-            <img src="{{ (printf "%s%s" .Permalink .Params.Cover ) }}" alt="{{ .Params.CoverAlt | plainify | default .Title }}" />
+        <!-- 计算修改时间 -->
+        <span class="posts__updated-date">
+          {{ $ageDays := div (sub now.Unix .Lastmod.Unix) 86400 }}
+          {{ $ageMonths := div (sub now.Unix .Lastmod.Unix) 2592000 }}
+          {{ if eq $ageDays 0 }}
+          Updated today
+          {{ else if lt $ageDays 31 }}
+          Updated {{ $ageDays }} {{ cond (eq $ageDays 1) "day" "days"}} ago
           {{ else }}
-            <img src="{{ .Params.Cover | absURL }}" alt="{{ .Params.CoverAlt | plainify | default .Title }}" />
-            {{ end }}
-
-            {{ if .Params.CoverCaption }}
-              <figcaption class="center">{{ .Params.CoverCaption | markdownify }}</figcaption>
-            {{ end }}
-          </figure>
-        {{ end }}
-
-        <div class="post-content">
-          {{ with .Description }}
-            {{ . | markdownify }}
-            {{ else }}
-            {{ if .Truncated }}
-              {{ .Summary }}
-            {{ end }}
+          Updated {{ $ageMonths }} {{ cond (eq $ageMonths 1) "month" "months" }} ago
           {{ end }}
-        </div>
-        {{ if not .Params.hideReadMore }}
-          <div>
-            <a class="read-more button" href="{{ .RelPermalink }}"
-              >{{ $.Site.Params.ReadMore | default "Read more" }} →</a
-            >
-          </div>
+        </span>
+
+      </a>
+    </h3>
+
+    <div class="posts__post-meta">
+
+      <!-- 创建时间 -->
+      <span class="posts__post-date">
+        {{ .Date.Format ($.Site.Params.DateFormatList | default "2006-01-02") }}
+      </span>
+
+      <!-- 标签 -->
+      {{ if .Params.tags }}
+      <span class="posts__post-tags">
+        {{ range .Params.tags }}
+        <a href="{{ (urlize (printf "tags/%s" . )) | absURL }}/">#{{ . }}</a>&nbsp;
         {{ end }}
-      </div>
-    {{ end }}
-    {{ partial "pagination.html" . }}
+      </span>
+      {{ end }}
+
+      <!-- 系列 -->
+      {{ if .Params.series }}
+      <span class="posts__post-series">
+        {{ range .Params.series }}
+        <a href="{{ (urlize (printf "series/%s" . )) | absURL }}/">@{{ . }}</a>&nbsp;
+        {{ end }}
+      </span>
+      {{ end }}
+
+    </div>
   </div>
+  {{ end }}
+  {{ partial "pagination.html" . }}
+</div>
 {{ end }}

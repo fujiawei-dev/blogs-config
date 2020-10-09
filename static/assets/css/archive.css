@@ -2,9 +2,9 @@
 
 .archive {
     width: 100%;
-    max-width: 900px;
+    max-width: 900px !important;
     text-align: left;
-    padding: 20px;
+    padding: 20px !important;
     margin: 0 auto;
     font-family: Arial, "等线";
 }
