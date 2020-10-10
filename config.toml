@@ -74,9 +74,6 @@ useRelativeCover = true
 [permalinks]
   posts = "/posts/:year/:month/:day/:title/"
 
-[blackfriday]
-  hrefTargetBlank = true
-
 [taxonomies]
   tag      = "tags"  # 文章标签
   category = "categories"  # 文章分类

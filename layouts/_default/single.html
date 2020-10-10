@@ -70,7 +70,7 @@
     {{ .Content }}
   </div>
 
-  {{ if eq .Type $.Site.Params.contentTypeName }}
+  {{ if eq .Type "posts" }}
   {{ if or .NextInSection .PrevInSection }}
   <div class="pagination">
     <div class="pagination__title">
