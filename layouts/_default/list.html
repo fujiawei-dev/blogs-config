@@ -1,7 +1,8 @@
 {{ define "main" }}
 
 <div class="posts">
-  {{ range .Pages }}
+  <!-- 根据修改时间排序 -->
+  {{ range .Pages.ByLastmod.Reverse }}
   <div class="post on-list">
 
     <!-- 标题 -->

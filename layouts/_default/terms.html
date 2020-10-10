@@ -6,7 +6,8 @@
 
 <div class="terms">
   <ul class="terms__tags">
-    {{ range $key, $value := .Data.Terms.Alphabetical }}
+    <!-- 按数量排序 -->
+    {{ range $key, $value := .Data.Terms.ByCount }}
     {{ $name := .Name }}
     {{ $count := .Count }}
     {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
@@ -23,7 +24,8 @@
 
 <div class="terms">
   <ul class="terms__series">
-    {{ range $key, $value := .Data.Terms.Alphabetical }}
+    <!-- 按数量排序 -->
+    {{ range $key, $value := .Data.Terms.ByCount }}
     {{ $name := .Name }}
     {{ $count := .Count }}
     {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}

@@ -13,7 +13,8 @@
 {{ end }}
 
 <div class="posts">
-  {{ range $paginator.Pages }}
+  <!-- 根据修改时间排序 -->
+  {{ range $paginator.Pages.ByLastmod.Reverse }}
   <div class="post on-list">
 
     <!-- 标题 -->
@@ -32,7 +33,7 @@
           Updated {{ $ageMonths }} {{ cond (eq $ageMonths 1) "month" "months" }} ago
           {{ end }}
         </span>
-        
+
       </a>
     </h3>
 

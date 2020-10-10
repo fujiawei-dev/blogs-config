@@ -1,5 +1,3 @@
-@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700';
-
 .aa-input-container {
     display: inline-block;
     position: relative;
@@ -20,7 +18,6 @@
     border-radius: 1rem;
     -webkit-transition: .2s;
     transition: .2s;
-    font-family: "Montserrat", sans-serif;
     font-size: 11px;
     box-sizing: border-box;
     color: #a0a0a9;
@@ -69,7 +66,7 @@
 .aa-suggestion {
     font-size: 14px;
     padding: 9px;
-    font-family: "PingFang Regular", "Montserrat", sans-serif;
+    font-family: "等线";
     cursor: pointer;
     -webkit-transition: .2s;
     transition: .2s;

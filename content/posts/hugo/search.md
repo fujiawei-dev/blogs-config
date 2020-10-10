@@ -3,18 +3,18 @@ date: 2020-10-06T00:22:22+08:00  # 创建日期
 author: "Rustle Karl"  # 作者
 
 # 文章
-title: "给网站添加搜索功能"  # 文章标题
+title: "给 Hugo 添加文章搜索功能"  # 标题
 description: "Hugo 集成 Algolia 搜索"
-url:  "posts/2020/10/06/search"  # 设置网页链接，默认使用文件名
-tags: [ "hugo", "algolia"]  # 自定义标签
-series: [ "博客系统摸爬滚打"]  # 文章主题/文章系列
-categories: [ "浅尝辄止"]  # 文章分类
+url:  "posts/hugo/search"  # 设置网页永久链接
+tags: [ "hugo", "algolia"]  # 自标签
+series: [ "博客系统摸爬滚打"]  # 系列
+categories: [ "浅尝辄止"]  # 分类
 
 # 章节
-weight: 20 # 文章在章节中的排序优先级，正序排序
-chapter: false  # 将页面设置为章节
+weight: 20 # 排序优先级
+chapter: false  # 设置为章节
 
-index: true  # 文章是否可以被索引
+index: true  # 是否可以被索引
 draft: false  # 草稿
 ---
 
@@ -24,7 +24,7 @@ draft: false  # 草稿
 
 ## 安装插件
 
-```
+```shell
 npm install hugo-algolia -g
 ```
 
@@ -100,4 +100,3 @@ hugo-algolia -s
 ## 前端页面
 
 前端是我从未深入学习过的领域。。。勉强改成了现在的样子。
-
