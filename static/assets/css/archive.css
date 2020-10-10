@@ -1,3 +1,47 @@
+/* 头像与网站链接 */
+.archive-item {
+    font-family: Inter, "等线";
+    padding: 10px 15px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.archive-item img {
+    border-radius: 1rem;
+    margin: 4px 12px 0 0;
+    float: left;
+    width: 48px;
+    height: 48px;
+}
+
+.archive-item a {
+    line-height: 28px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.archive-item-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+}
+
+.archive-item-meta {
+    font-size: 13px;
+    font-weight: 200;
+    display: block;
+    word-break: break-all;
+}
+
+.archive-item.links-item {
+    width: 100%;
+    margin: 1em 0;
+}
+
 /* Archive 页面样式 */
 
 .archive {
