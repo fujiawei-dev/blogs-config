@@ -3,9 +3,9 @@ date: 2020-10-04T19:30:56+08:00  # 创建日期
 author: "Rustle Karl"  # 作者
 
 # 文章
-title: "添加回到顶部的按钮"  # 文章标题
+title: "添加回到顶部/底部的按钮"  # 文章标题
 description: "给长文章添加一键回到顶部的按钮。"
-url:  "posts/2020/10/04/back2top"  # 设置网页链接，默认使用文件名
+url:  "posts/hugo/back2top"  # 设置网页链接，默认使用文件名
 tags: [ "hugo"] # 自定义标签
 series: [ "博客系统摸爬滚打"]  # 文章主题/文章系列
 categories: [ "浅尝辄止"]  # 文章分类
@@ -18,6 +18,47 @@ index: true  # 文章是否可以被索引
 draft:  false  # 草稿
 toc: false
 ---
+
+> 最新的是基于页面锚点简单实现的，跳转过程不带任何过渡动画。
+
+## 基于页面锚点的实现
+
+`layouts/_default/baseof.html`
+
+```html
+    <!-- 锚点 -->
+    <a id="back2top"></a>
+
+    {{ partial "header.html" . }}
+
+    <div class="content">
+      {{ block "main" . }} {{ end }}
+    </div>
+
+    <!-- 锚点 -->
+    <a id="back2bottom"></a>
+```
+
+`layouts/partials/extended_body.html`
+
+```html
+<div id="fix-controls" class="fix-controls">
+    <a class="back-to" href="#back2top" style="bottom: 100px; scroll-behavior: smooth;">
+        <svg viewBox="0 0 24 24">
+            <!-- <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path> -->
+            <path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"></path>
+        </svg>
+    </a>
+    <a class="back-to" href="#back2bottom" style="bottom: 40px; scroll-behavior: smooth;">
+        <svg viewBox="0 0 24 24" style="transform: scaleY(-1);">
+            <!-- <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path> -->
+            <path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"></path>
+        </svg>
+    </a>
+</div>
+```
+
+## 基于 JavaScript 的实现
 
 {{< code language="html" title="layouts/partials/extended_footer.html" id="1" expand="Show" collapse="Hide" isCollapsed="false" >}}
 <script src={{ "assets/back2top.js" | absURL }}></script>

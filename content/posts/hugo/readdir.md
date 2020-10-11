@@ -6,7 +6,7 @@ author: "Rustle Karl"  # 作者
 # 文章
 title: "修改 Hugo 源代码允许访问工作目录之外的文件"  # 文章标题
 description: "官方不允许程序访问工作目录之外的文件，没办法只能动手修改 Hugo 源码，然后重新编译"
-url:  "posts/2020/10/07/read-dir"  # 设置网页链接，默认使用文件名
+url:  "posts/hugo/readdir"  # 设置网页链接，默认使用文件名
 tags: [ "hugo"]  # 自定义标签
 series: [ "博客系统摸爬滚打"]  # 文章主题/文章系列
 categories: [ "浅尝辄止"]  # 文章分类

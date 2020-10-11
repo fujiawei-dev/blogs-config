@@ -6,8 +6,8 @@ author: "Rustle Karl"  # 作者
 # 文章
 title: "将 Hugo 网站分享到局域网"  # 文章标题
 description: "在局域网内分享 Hugo 网站"
-url:  "posts/2020/10/08/wlanshare"  # 设置网页链接，默认使用文件名
-tags: [ "hugo"]  # 自定义标签
+url:  "posts/hugo/wlanshare"  # 设置网页链接，默认使用文件名
+tags: [ "hugo", "localhost" ]  # 自定义标签
 series: [ "博客系统摸爬滚打"]  # 文章主题/文章系列
 categories: [ "浅尝辄止"]  # 文章分类
 

@@ -5,7 +5,7 @@ author: "Rustle Karl"  # 作者
 # 文章
 title: "基于 Docker 部署 Hugo"  # 文章标题
 description: "为了方便随时浏览，而不必每次都手动启动 Hugo 自带的服务器，缺点在于无法实时更新内容"
-url:  "posts/2020/10/05/deploy"  # 设置网页链接，默认使用文件名
+url:  "posts/hugo/deploy"  # 设置网页链接，默认使用文件名
 tags: [ "hugo", "docker", "nginx"]  # 自定义标签
 series: [ "博客系统摸爬滚打"]  # 文章主题/文章系列
 categories: [ "浅尝辄止"]  # 文章分类

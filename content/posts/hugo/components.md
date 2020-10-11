@@ -1,12 +1,11 @@
 ---
 date: 2020-10-06T11:57:22+08:00  # 创建日期
 author: "Rustle Karl"  # 作者
-# cover: "/examples/imgs"  # 封面图，可以是相对于 static 的路径，也可以是相对于当前的路径
 
 # 文章
 title: "Hogo 网站页面小部件合辑"  # 文章标题
 description: "统计文章篇数、字数、社交图标、看板娘等小部件"
-url:  "posts/2020/10/06/components"  # 设置网页链接，默认使用文件名
+url:  "posts/hugo/components"  # 设置网页链接，默认使用文件名
 tags: [ "hugo", "js", "css", "html"]  # 自定义标签
 series: [ "博客系统摸爬滚打"]  # 文章主题/文章系列
 categories: [ "浅尝辄止"]  # 文章分类

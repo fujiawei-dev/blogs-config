@@ -6,7 +6,7 @@ author: "Rustle Karl"  # 作者
 # 文章
 title: "Hugo 全局创建模板文件技巧"  # 文章标题
 description: "必须在根目录才能渲染生成基础文件太膈应人的，为此我创建了命令别名"
-url:  "posts/2020/10/07/hugo-skills"  # 设置网页链接，默认使用文件名
+url:  "posts/hugo/skills"  # 设置网页链接，默认使用文件名
 tags: [ "hugo", "skills", "alias"]  # 自定义标签
 series: [ "博客系统摸爬滚打"]  # 文章主题/文章系列
 categories: [ "浅尝辄止"]  # 文章分类
