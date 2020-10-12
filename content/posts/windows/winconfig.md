@@ -5,7 +5,7 @@ author: "Rustle Karl"  # 作者
 # 文章
 title: " Windows 系统重装后的基本配置"  # 文章标题
 description: "每次系统重装、更换新的系统/硬件，开发环境的重新搭建都是一个巨大的工程"
-url:  "posts/2020/09/05/winconfig"  # 设置网页链接，默认使用文件名
+url:  "posts/windows/winconfig"  # 设置网页链接，默认使用文件名
 tags: [ "windows", "config", "wsl2", "docker"]  # 自定义标签
 series: [ "系统重装基础配置"]  # 文章主题/文章系列
 categories: [ "基础配置"]  # 文章分类

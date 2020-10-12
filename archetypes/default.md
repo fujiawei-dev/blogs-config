@@ -16,5 +16,5 @@ chapter: false  # 设置为章节
 
 index: true  # 是否可以被索引
 toc: true  # 是否自动生成目录
-draft: true  # 草稿
+draft: false  # 草稿
 ---
