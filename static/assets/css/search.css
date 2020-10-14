@@ -57,14 +57,18 @@
     background-color: #1d1c1c;
     width: 320px;
     margin-top: 15%;
+    margin-left: -35%;
     box-sizing: border-box;
     -webkit-transition: .5s;
     transition: .5s;
     border-radius: 10px;
+    max-height: 600px;
+    overflow-y: auto;
+    /*滚动条*/
 }
 
 .aa-suggestion {
-    font-size: 14px;
+    font-size: 15px;
     padding: 9px;
     font-family: "等线";
     cursor: pointer;
