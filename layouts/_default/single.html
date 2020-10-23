@@ -41,6 +41,10 @@
     {{ range .Params.tags }}
     <a href="{{ (urlize (printf "tags/%s" . )) | absURL }}/">#{{ . }}</a>&nbsp;
     {{ end }}
+
+    {{ range .Params.series }}
+    <a href="{{ (urlize (printf "series/%s" . )) | absURL }}/">@{{ . }}</a>&nbsp;
+    {{ end }}
   </span>
   {{ end }}
 

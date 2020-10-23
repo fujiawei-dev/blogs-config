@@ -25,6 +25,15 @@
     opacity: .6
 }
 
+.post-series {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-size: 18px;
+    opacity: .6
+}
+
 .post-meta {
     font-size: 1rem;
     margin-bottom: 10px;

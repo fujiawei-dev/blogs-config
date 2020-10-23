@@ -1,7 +1,7 @@
 /* 文章目录 */
 .post-toc {
     top: 15% !important;
-    max-height: 85%;
+    max-height: 70%;
     /* bottom: 15% !important; */
     position: fixed !important;
     width: 220px;
