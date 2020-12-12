@@ -16,3 +16,20 @@ index: true  # 文章是否可以被索引
 draft: true  # 草稿
 toc: true  # 是否自动生成目录
 ---
+
+## 关闭 WSL
+
+```powershell
+wsl --shutdown
+```
+
+## 限制内存
+
+```ini
+[wsl2]
+memory=12GB
+```
+
+```powershell
+
+```

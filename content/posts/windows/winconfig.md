@@ -85,7 +85,7 @@ Docker 官网有关 WSL 的文档说明 https://docs.docker.com/docker-for-windo
 
 关键在于开启下图所示的功能：
 
-![](imgs/wsl2_docker_distro.png)
+![](https://i.loli.net/2020/12/05/XIy9j64MzxvKWmw.png)
 
 {{< image src="/posts/imgs/windows/wsl2_docker_distro.png" alt="wsl2_docker_distro" position="center" style="border-radius: 8px;" >}}
 

@@ -4,7 +4,7 @@ author: "Rustle Karl"  # 作者
 
 # 文章
 title: "Windows 实用命令"  # 文章标题
-url:  "posts/filepath"  # 设置网页永久链接
+url:  "posts/windows/skills"  # 设置网页永久链接
 tags: [ "windows", "skills"]  # 标签
 series: [ "Windows 常见问题与技巧"]  # 系列
 
