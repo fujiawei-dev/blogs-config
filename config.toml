@@ -87,7 +87,7 @@ useRelativeCover = true
   defaultTheme = "dark"
 
   # if you set this to 0, only submenu trigger will be visible
-  showMenuItems = 4
+  showMenuItems = 3
 
   # Show reading time in minutes for posts
   showReadingTime = true

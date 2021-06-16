@@ -1,10 +1,14 @@
 ---
-title: "基于 Hugo 部署个人博客系统"
+title: "个人博客系统"
 date: "2020-10-04"
 author: "Rustle Karl"
 ---
 
-# 基于 Hugo 部署个人博客系统
+# 个人博客系统
+
+> Powered by Hugo
+
+自定义的部件（搜索/目录等）不太完美，不过也不太想折腾。。。
 
 ## Release
 
