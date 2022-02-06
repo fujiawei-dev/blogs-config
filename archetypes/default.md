@@ -6,7 +6,7 @@ author: "Rustle Karl"  # 作者
 title: "{{ replace .Name "-" " " | title }}"  # 文章标题
 # description: "文章描述"
 url:  "posts"  # 设置网页永久链接
-tags: [ "tag1", "tag2"]  # 标签
+tags: ["tag1", "tag2"]  # 标签
 series: [ "series"]  # 系列
 categories: [ "学习笔记"]  # 分类
 
