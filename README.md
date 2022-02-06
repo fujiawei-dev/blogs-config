@@ -1,16 +1,14 @@
 ---
-title: "个人博客系统"
+title: "我的博客系统"
 date: "2020-10-04"
 author: "Rustle Karl"
 ---
 
-# 个人博客系统
-
-> Powered by Hugo
-
 自定义的部件（搜索/目录等）不太完美，不过也不太想折腾。。。
 
-## Release
+## 安装 Hugo
+
+### Release
 
 在 Release 页面下载可执行文件即可。
 
@@ -20,7 +18,7 @@ https://github.com/gohugoio/hugo/releases
 
 然后设置环境变量。
 
-## Docker 
+### Docker 
 
 ```shell
 docker pull klakegg/hugo
@@ -179,7 +177,7 @@ draft: false  # 草稿
 
 ```yaml
 tags: ["hugo"]
-series: ["部署个人博客系统"]
+series: ["部署博客系统"]
 categories: ["浅尝辄止"]
 ```
 
