@@ -1,0 +1,7 @@
+[submodule "themes/stack"]
+	path = themes/stack
+	url = https://github.com/CaiJimmy/hugo-theme-stack.git
+	ignore = dirty
+[submodule "content/post/git"]
+	path = content/post/git
+	url = git@github.com:fujiawei-dev/git-notes.git
