@@ -5,3 +5,6 @@
 [submodule "content/post/git"]
 	path = content/post/git
 	url = git@github.com:fujiawei-dev/git-notes.git
+[submodule "content/post/tools"]
+	path = content/post/tools
+	url = git@github.com:fujiawei-dev/tools-notes.git
