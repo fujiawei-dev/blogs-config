@@ -8,3 +8,12 @@
 [submodule "content/post/tools"]
 	path = content/post/tools
 	url = git@github.com:fujiawei-dev/tools-notes.git
+[submodule "content/post/linux"]
+	path = content/post/linux
+	url = git@github.com:studying-notes/linux-notes.git
+[submodule "content/post/docker"]
+	path = content/post/docker
+	url = git@github.com:studying-notes/docker-notes.git
+[submodule "content/post/python"]
+	path = content/post/python
+	url = git@github.com:studying-notes/python-notes.git
