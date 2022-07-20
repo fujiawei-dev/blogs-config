@@ -17,3 +17,18 @@
 [submodule "content/post/python"]
 	path = content/post/python
 	url = git@github.com:studying-notes/python-notes.git
+[submodule "content/post/raspberrypi"]
+	path = content/post/raspberrypi
+	url = git@github.com:studying-notes/raspberrypi-note.git
+[submodule "content/post/windows"]
+	path = content/post/windows
+	url = git@github.com:studying-notes/windows-notes.git
+[submodule "content/post/ps"]
+	path = content/post/ps
+	url = git@github.com:studying-notes/ps-notes.git
+[submodule "content/post/k8s"]
+	path = content/post/k8s
+	url = git@github.com:fujiawei-dev/k8s-notes.git
+[submodule "content/post/go"]
+	path = content/post/go
+	url = git@github.com:studying-notes/go-notes.git
