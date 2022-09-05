@@ -32,3 +32,9 @@
 [submodule "content/post/go"]
 	path = content/post/go
 	url = git@github.com:studying-notes/go-notes.git
+[submodule "content/post/cpp"]
+	path = content/post/cpp
+	url = git@github.com:studying-notes/cpp-notes.git
+[submodule "content/post/kotlin"]
+	path = content/post/kotlin
+	url = git@github.com:studying-notes/kotlin-notes.git
