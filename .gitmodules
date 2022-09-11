@@ -38,3 +38,18 @@
 [submodule "content/post/kotlin"]
 	path = content/post/kotlin
 	url = git@github.com:studying-notes/kotlin-notes.git
+[submodule "content/post/qt5"]
+	path = content/post/qt5
+	url = git@github.com:studying-notes/qt5-notes.git
+[submodule "content/post/mysql"]
+	path = content/post/mysql
+	url = git@github.com:studying-notes/mysql-notes.git
+[submodule ".github"]
+	path = .github
+	url = git@github.com:studying-notes/.github.git
+[submodule "content/post/redis"]
+	path = content/post/redis
+	url = git@github.com:studying-notes/redis-notes.git
+[submodule "content/post/aws"]
+	path = content/post/aws
+	url = git@github.com:studying-notes/aws-notes.git
